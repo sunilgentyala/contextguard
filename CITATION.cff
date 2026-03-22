@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software or corpus in your research, please cite it as below."
+type: software
+title: "ContextGuard: Cryptographic Attestation and Zero-Trust Enforcement Against Supply Chain Attacks in Model Context Protocol Deployments"
+version: 1.0.0
+date-released: "2026-03-22"
+repository-code: "https://github.com/sunilgentyala/contextguard"
+license: MIT
+authors:
+  - family-names: Gentyala
+    given-names: Sunil
+    affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
+    orcid: "https://orcid.org/0009-0005-2642-3479"
+    email: sunil.gentyala@ieee.org
+abstract: >
+  ContextGuard is a zero-trust governance middleware framework for Model Context
+  Protocol (MCP) deployments. It implements cryptographic server attestation
+  (ECDSA P-256), continuous capability binding for rug pull detection, and
+  semantic tool-definition scanning for tool poisoning detection. Evaluated
+  against a 30-entry hand-crafted corpus of malicious MCP tool definitions,
+  the CVL and DIMS prototype achieves 100.0% precision and 96.7% recall at
+  1.005 ms mean authorization latency.
+keywords:
+  - model-context-protocol
+  - zero-trust-architecture
+  - supply-chain-security
+  - ai-agent-security
+  - tool-poisoning
+  - rug-pull-attack
+  - cryptographic-attestation
+  - llm-security
+preferred-citation:
+  type: article
+  title: >
+    ContextGuard: Cryptographic Attestation and Zero-Trust Enforcement Against
+    Supply Chain Attacks in Model Context Protocol Deployments
+  authors:
+    - family-names: Gentyala
+      given-names: Sunil
+      affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
+      orcid: "https://orcid.org/0009-0005-2642-3479"
+  journal: "IEEE Security & Privacy"
+  year: 2026
+  notes: "Submitted"

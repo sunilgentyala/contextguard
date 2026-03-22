@@ -1,0 +1,45 @@
+{
+  "name": "contextguard",
+  "version": "1.0.0",
+  "description": "Zero-trust governance middleware for Model Context Protocol deployments — cryptographic attestation, capability binding, and semantic tool-definition scanning.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "evaluate": "ts-node src/evaluate.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "zero-trust",
+    "supply-chain-security",
+    "ai-security",
+    "tool-poisoning",
+    "rug-pull",
+    "llm-security",
+    "cryptographic-attestation"
+  ],
+  "author": {
+    "name": "Sunil Gentyala",
+    "email": "sunil.gentyala@ieee.org",
+    "url": "https://github.com/sunilgentyala"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunilgentyala/contextguard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunilgentyala/contextguard/issues"
+  },
+  "homepage": "https://github.com/sunilgentyala/contextguard#readme",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

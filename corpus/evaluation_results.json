@@ -1,0 +1,413 @@
+{
+  "timestamp": "2026-03-22T07:27:43.473Z",
+  "corpus_size": 40,
+  "metrics": {
+    "precision": 1,
+    "recall": 0.9666666666666667,
+    "f1": 0.983050847457627,
+    "false_positive_rate": 0,
+    "TP": 29,
+    "FN": 1,
+    "FP": 0,
+    "TN": 10
+  },
+  "latency": {
+    "mean_ms": 1.0100706300000004,
+    "p50_ms": 0.720434,
+    "p95_ms": 0.94321,
+    "p99_ms": 11.761251,
+    "min_ms": 0.618804,
+    "max_ms": 45.118513,
+    "n": 1000
+  },
+  "per_entry": [
+    {
+      "id": "TP-001",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 1.357253
+    },
+    {
+      "id": "TP-002",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.087623
+    },
+    {
+      "id": "TP-003",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.029945
+    },
+    {
+      "id": "TP-004",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.628654
+    },
+    {
+      "id": "TP-005",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.041335
+    },
+    {
+      "id": "TP-006",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.016162
+    },
+    {
+      "id": "TP-007",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.025303
+    },
+    {
+      "id": "TP-008",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.019098
+    },
+    {
+      "id": "TP-009",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.014798
+    },
+    {
+      "id": "TP-010",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.024639
+    },
+    {
+      "id": "TP-011",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.016823
+    },
+    {
+      "id": "TP-012",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.018173
+    },
+    {
+      "id": "TP-013",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.030278
+    },
+    {
+      "id": "TP-014",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.033716
+    },
+    {
+      "id": "TP-015",
+      "category": "tool_poisoning",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "pattern_scan"
+      ],
+      "latencyMs": 0.021037
+    },
+    {
+      "id": "RUG-001",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding",
+        "drift_detection",
+        "pattern_scan"
+      ],
+      "latencyMs": 3.3363
+    },
+    {
+      "id": "RUG-002",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding"
+      ],
+      "latencyMs": 0.554797
+    },
+    {
+      "id": "RUG-003",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding",
+        "drift_detection",
+        "pattern_scan"
+      ],
+      "latencyMs": 0.611385
+    },
+    {
+      "id": "RUG-004",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding",
+        "drift_detection"
+      ],
+      "latencyMs": 0.843336
+    },
+    {
+      "id": "RUG-005",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding",
+        "drift_detection",
+        "pattern_scan"
+      ],
+      "latencyMs": 0.785499
+    },
+    {
+      "id": "RUG-006",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding"
+      ],
+      "latencyMs": 1.512901
+    },
+    {
+      "id": "RUG-007",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding",
+        "drift_detection",
+        "pattern_scan"
+      ],
+      "latencyMs": 0.625738
+    },
+    {
+      "id": "RUG-008",
+      "category": "rug_pull",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "capability_binding",
+        "drift_detection"
+      ],
+      "latencyMs": 0.542131
+    },
+    {
+      "id": "SC-001",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "SC-002",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "SC-003",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "SC-004",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "SC-005",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "SC-006",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "SC-007",
+      "category": "supply_chain",
+      "label": "malicious",
+      "detected": true,
+      "detectors_fired": [
+        "scve_behavioral"
+      ],
+      "latencyMs": 0.12
+    },
+    {
+      "id": "BN-001",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.00985
+    },
+    {
+      "id": "BN-002",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.014204
+    },
+    {
+      "id": "BN-003",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.011526
+    },
+    {
+      "id": "BN-004",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.015916
+    },
+    {
+      "id": "BN-005",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.014238
+    },
+    {
+      "id": "BN-006",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.007837
+    },
+    {
+      "id": "BN-007",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.011059
+    },
+    {
+      "id": "BN-008",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.010433
+    },
+    {
+      "id": "BN-009",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.010793
+    },
+    {
+      "id": "BN-010",
+      "category": "benign_baseline",
+      "label": "benign",
+      "detected": false,
+      "detectors_fired": [],
+      "latencyMs": 0.013264
+    }
+  ]
+}
