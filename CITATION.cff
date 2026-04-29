@@ -24,7 +24,8 @@ abstract: >
   ContextGuard is a zero-trust middleware framework for Model Context
   Protocol (MCP) deployments. It implements cryptographic server attestation
   (ECDSA P-256), continuous capability binding for rug pull detection, and
-  semantic tool-definition scanning for tool poisoning detection. Evaluated
+  semantic tool-definition scanning for tool poisoning detection. Extended
+  application to supply chain security is published at ICCBI 2026. Evaluated
   against a 30-entry hand-crafted corpus of malicious MCP tool definitions,
   the CVL and DIMS prototype achieves 100.0% precision and 96.7% recall at
   1.005 ms mean authorization latency.
@@ -56,3 +57,26 @@ preferred-citation:
   year: 2026
   collection-title: "Proc. IEEE International Conference"
   notes: "Submitted"
+references:
+  - type: conference-paper
+    title: >
+      A Zero-Trust Supply Chain Security Framework for Model Context
+      Protocol-Based AI Systems
+    authors:
+      - family-names: Gentyala
+        given-names: Sunil
+        affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
+        orcid: "https://orcid.org/0009-0005-2642-3479"
+      - family-names: Srinivas
+        given-names: Ch
+        affiliation: "Dept. of CSE, Sir C R Reddy College of Engineering, Eluru, India"
+      - family-names: Dhumpati
+        given-names: Raghu
+        affiliation: "Dept. of CSE, Bahrain Polytechnic, Bahrain"
+    year: 2026
+    month: 6
+    collection-title: "Proc. 5th International Conference on Computer Networks, Big Data, and IoT (ICCBI 2026)"
+    conference:
+      name: ICCBI 2026
+      location: "Dubai, UAE"
+    notes: "IEEE copyright transferred; forthcoming in IEEE Xplore"
