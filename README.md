@@ -1,10 +1,12 @@
+[README.md](https://github.com/user-attachments/files/27215679/README.md)
 # ContextGuard
 
 **A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent Pipelines**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sunilgentyala/contextguard/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![IEEE Conference](https://img.shields.io/badge/Paper-IEEE_Conference-red.svg)](#citation)
+[![IEEE Conference](https://img.shields.io/badge/Paper-IEEE_ICCBI_2026-red.svg)](#citation)
+[![IEEE Copyright](https://img.shields.io/badge/IEEE_Copyright-Transferred-green.svg)](#citation)
 
 ContextGuard is a proof-of-concept middleware library that enforces zero-trust security controls on Model Context Protocol (MCP) communications. It implements cryptographic server attestation, continuous capability binding (rug pull detection), and semantic tool definition scanning, addressing the supply chain attack surface introduced by MCP's unauthenticated tool enumeration model.
 
@@ -14,11 +16,19 @@ ContextGuard is a proof-of-concept middleware library that enforces zero-trust s
 
 The Model Context Protocol does not mandate authentication for the `tools/list` enumeration method. A large-scale empirical study of 1,899 open-source MCP server deployments found that 7.2% contained general exploitable vulnerabilities and 5.5% exhibited MCP-specific tool poisoning (Hasan et al., 2025). Over 1,800 internet-facing MCP servers accept unauthenticated tool listing requests. CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-6514 (CVSS 9.6) demonstrate operational exploitation of this exposure.
 
-ContextGuard was developed as the implementation artifact for the paper:
+ContextGuard was developed as the implementation artifact for foundational MCP security research:
 
+**Primary ContextGuard Paper:**
 > **ContextGuard: A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent Pipelines**
 > Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
 > *Submitted to IEEE International Conference, 2026*
+
+**Extended Zero-Trust Supply Chain Application:**
+> **A Zero-Trust Supply Chain Security Framework for Model Context Protocol-Based AI Systems**
+> Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
+> *Accepted: 5th International Conference on Computer Networks, Big Data, and IoT (ICCBI 2026)*
+> *Manipal Academy of Higher Education, Dubai, June 18-20, 2026*
+> *IEEE Copyright transferred. Camera-ready pending for IEEE Xplore.*
 
 ---
 
@@ -135,6 +145,8 @@ To cite the corpus:
 
 ## Citation
 
+**Primary ContextGuard Framework:**
+
 ```bibtex
 @inproceedings{gentyala2026contextguard,
   title   = {ContextGuard: A Zero-Trust Middleware Framework for Securing
@@ -143,6 +155,21 @@ To cite the corpus:
   booktitle = {Proc. IEEE International Conference},
   year    = {2026},
   note    = {Submitted}
+}
+```
+
+**Zero-Trust Supply Chain Application (Published):**
+
+```bibtex
+@inproceedings{gentyala2026zerotrust,
+  title   = {A Zero-Trust Supply Chain Security Framework for Model Context
+             Protocol-Based AI Systems},
+  author  = {Gentyala, Sunil and Srinivas, Ch and Dhumpati, Raghu},
+  booktitle = {Proc. 5th International Conference on Computer Networks, Big Data, and IoT (ICCBI)},
+  address = {Dubai, UAE},
+  month   = {June},
+  year    = {2026},
+  note    = {IEEE copyright transferred; forthcoming in IEEE Xplore}
 }
 ```
 
