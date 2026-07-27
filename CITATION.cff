@@ -75,8 +75,10 @@ references:
         affiliation: "Dept. of CSE, Bahrain Polytechnic, Bahrain"
     year: 2026
     month: 6
-    collection-title: "Proc. 5th International Conference on Computer Networks, Big Data, and IoT (ICCBI 2026)"
+    collection-title: "2026 5th International Conference on Computer Networks, Big Data and IoT (ICCBI)"
     conference:
       name: ICCBI 2026
-      location: "Dubai, UAE"
-    notes: "IEEE copyright transferred; forthcoming in IEEE Xplore"
+      location: "Dubai, United Arab Emirates"
+    doi: "10.1109/ICCBI68589.2026.11619741"
+    url: "https://ieeexplore.ieee.org/document/11619741"
+    notes: "Published in IEEE Xplore: 27 July 2026"

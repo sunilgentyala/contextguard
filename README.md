@@ -5,8 +5,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sunilgentyala/contextguard/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![IEEE Conference](https://img.shields.io/badge/Paper-IEEE_ICCBI_2026-red.svg)](#citation)
-[![IEEE Copyright](https://img.shields.io/badge/IEEE_Copyright-Transferred-green.svg)](#citation)
+[![IEEE Conference](https://img.shields.io/badge/Paper-IEEE_ICCBI_2026-red.svg)](https://ieeexplore.ieee.org/document/11619741)
+[![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-Published-green.svg)](https://ieeexplore.ieee.org/document/11619741)
 
 ContextGuard is a proof-of-concept middleware library that enforces zero-trust security controls on Model Context Protocol (MCP) communications. It implements cryptographic server attestation, continuous capability binding (rug pull detection), and semantic tool definition scanning, addressing the supply chain attack surface introduced by MCP's unauthenticated tool enumeration model.
 
@@ -23,12 +23,11 @@ ContextGuard was developed as the implementation artifact for foundational MCP s
 > Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
 > *Submitted to IEEE International Conference, 2026*
 
-**Extended Zero-Trust Supply Chain Application:**
+**Extended Zero-Trust Supply Chain Application (Published):**
 > **A Zero-Trust Supply Chain Security Framework for Model Context Protocol-Based AI Systems**
 > Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
-> *Accepted: 5th International Conference on Computer Networks, Big Data, and IoT (ICCBI 2026)*
-> *Manipal Academy of Higher Education, Dubai, June 18-20, 2026*
-> *IEEE Copyright transferred. Camera-ready pending for IEEE Xplore.*
+> *2026 5th International Conference on Computer Networks, Big Data and IoT (ICCBI), Dubai, UAE, June 18-20, 2026*
+> *Published in IEEE Xplore: 27 July 2026 · DOI: [10.1109/ICCBI68589.2026.11619741](https://ieeexplore.ieee.org/document/11619741)*
 
 ---
 
@@ -162,14 +161,17 @@ To cite the corpus:
 
 ```bibtex
 @inproceedings{gentyala2026zerotrust,
-  title   = {A Zero-Trust Supply Chain Security Framework for Model Context
-             Protocol-Based AI Systems},
-  author  = {Gentyala, Sunil and Srinivas, Ch and Dhumpati, Raghu},
-  booktitle = {Proc. 5th International Conference on Computer Networks, Big Data, and IoT (ICCBI)},
-  address = {Dubai, UAE},
-  month   = {June},
-  year    = {2026},
-  note    = {IEEE copyright transferred; forthcoming in IEEE Xplore}
+  title     = {A Zero-Trust Supply Chain Security Framework for Model Context
+               Protocol-Based AI Systems},
+  author    = {Gentyala, Sunil and Srinivas, Ch and Dhumpati, Raghu},
+  booktitle = {2026 5th International Conference on Computer Networks, Big Data
+               and IoT (ICCBI)},
+  address   = {Dubai, United Arab Emirates},
+  month     = {June},
+  year      = {2026},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCBI68589.2026.11619741},
+  url       = {https://ieeexplore.ieee.org/document/11619741}
 }
 ```
 
