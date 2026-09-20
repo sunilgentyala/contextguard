@@ -7,6 +7,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![IEEE Conference](https://img.shields.io/badge/Paper-IEEE_ICCBI_2026-red.svg)](https://ieeexplore.ieee.org/document/11619741)
 [![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-Published-green.svg)](https://ieeexplore.ieee.org/document/11619741)
+[![Stars](https://img.shields.io/github/stars/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/stargazers)
+[![Forks](https://img.shields.io/github/forks/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/network/members)
 
 ContextGuard is a proof-of-concept middleware library that enforces zero-trust security controls on Model Context Protocol (MCP) communications. It implements cryptographic server attestation, continuous capability binding (rug pull detection), and semantic tool definition scanning, addressing the supply chain attack surface introduced by MCP's unauthenticated tool enumeration model.
 
