@@ -20,16 +20,15 @@ The Model Context Protocol does not mandate authentication for the `tools/list` 
 
 ContextGuard was developed as the implementation artifact for foundational MCP security research:
 
-**Primary ContextGuard Paper:**
-> **ContextGuard: A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent Pipelines**
-> Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
-> *Submitted to IEEE International Conference, 2026*
-
-**Extended Zero-Trust Supply Chain Application (Published):**
+**Published paper (cite this):**
 > **A Zero-Trust Supply Chain Security Framework for Model Context Protocol-Based AI Systems**
 > Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
-> *2026 5th International Conference on Computer Networks, Big Data and IoT (ICCBI), Dubai, UAE, June 18-20, 2026*
-> *Published in IEEE Xplore: 27 July 2026 · DOI: [10.1109/ICCBI68589.2026.11619741](https://ieeexplore.ieee.org/document/11619741)*
+> *2026 5th International Conference on Computer Networks, Big Data and IoT (ICCBI), Dubai, UAE, June 18-20, 2026, pp. 913-919*
+> *Published in IEEE Xplore: 27 July 2026 · DOI: [10.1109/ICCBI68589.2026.11619741](https://doi.org/10.1109/ICCBI68589.2026.11619741)*
+
+**Companion manuscript (submitted, not yet published):**
+> **ContextGuard: A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent Pipelines**
+> Sunil Gentyala, Ch Srinivas, Raghu Dhumpati
 
 ---
 
@@ -146,20 +145,7 @@ To cite the corpus:
 
 ## Citation
 
-**Primary ContextGuard Framework:**
-
-```bibtex
-@inproceedings{gentyala2026contextguard,
-  title   = {ContextGuard: A Zero-Trust Middleware Framework for Securing
-             Model Context Protocol Agent Pipelines},
-  author  = {Gentyala, Sunil and Srinivas, Ch and Dhumpati, Raghu},
-  booktitle = {Proc. IEEE International Conference},
-  year    = {2026},
-  note    = {Submitted}
-}
-```
-
-**Zero-Trust Supply Chain Application (Published):**
+If you use ContextGuard in your research, please cite the published paper:
 
 ```bibtex
 @inproceedings{gentyala2026zerotrust,
@@ -171,11 +157,26 @@ To cite the corpus:
   address   = {Dubai, United Arab Emirates},
   month     = {June},
   year      = {2026},
+  pages     = {913--919},
   publisher = {IEEE},
   doi       = {10.1109/ICCBI68589.2026.11619741},
-  url       = {https://ieeexplore.ieee.org/document/11619741}
+  url       = {https://doi.org/10.1109/ICCBI68589.2026.11619741}
 }
 ```
+
+Companion middleware manuscript (submitted, not yet peer-reviewed):
+
+```bibtex
+@unpublished{gentyala2026contextguard,
+  title  = {ContextGuard: A Zero-Trust Middleware Framework for Securing
+            Model Context Protocol Agent Pipelines},
+  author = {Gentyala, Sunil and Srinivas, Ch and Dhumpati, Raghu},
+  year   = {2026},
+  note   = {Manuscript submitted for publication}
+}
+```
+
+GitHub's "Cite this repository" button uses [`CITATION.cff`](CITATION.cff), which points to the published paper.
 
 ---
 

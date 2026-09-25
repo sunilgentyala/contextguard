@@ -41,44 +41,48 @@ keywords:
 preferred-citation:
   type: conference-paper
   title: >
-    ContextGuard: A Zero-Trust Middleware Framework for Securing Model
-    Context Protocol Agent Pipelines
+    A Zero-Trust Supply Chain Security Framework for Model Context Protocol-Based AI Systems
   authors:
-    - family-names: Gentyala
-      given-names: Sunil
-      affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
-      orcid: "https://orcid.org/0009-0005-2642-3479"
-    - family-names: Srinivas
-      given-names: Ch
-      affiliation: "Dept. of CSE, Sir C R Reddy College of Engineering, Eluru, India"
-    - family-names: Dhumpati
-      given-names: Raghu
-      affiliation: "Dept. of CSE, Bahrain Polytechnic, Bahrain"
+  - family-names: Gentyala
+    given-names: Sunil
+    affiliation: HCLTech (HCL America Inc.), Dallas, TX, USA
+    orcid: https://orcid.org/0009-0005-2642-3479
+  - family-names: Srinivas
+    given-names: Ch
+    affiliation: Dept. of CSE, Sir C R Reddy College of Engineering, Eluru, India
+  - family-names: Dhumpati
+    given-names: Raghu
+    affiliation: Dept. of CSE, Bahrain Polytechnic, Bahrain
   year: 2026
-  collection-title: "Proc. IEEE International Conference"
-  notes: "Submitted"
+  month: 6
+  collection-title: 2026 5th International Conference on Computer Networks, Big Data and IoT
+    (ICCBI)
+  conference:
+    name: ICCBI 2026
+    location: Dubai, United Arab Emirates
+  doi: 10.1109/ICCBI68589.2026.11619741
+  url: https://ieeexplore.ieee.org/document/11619741
+  notes: 'Published in IEEE Xplore: 27 July 2026'
+  start: 913
+  end: 919
+  publisher:
+    name: IEEE
+  collection-type: proceedings
 references:
-  - type: conference-paper
-    title: >
-      A Zero-Trust Supply Chain Security Framework for Model Context
-      Protocol-Based AI Systems
-    authors:
-      - family-names: Gentyala
-        given-names: Sunil
-        affiliation: "HCLTech (HCL America Inc.), Dallas, TX, USA"
-        orcid: "https://orcid.org/0009-0005-2642-3479"
-      - family-names: Srinivas
-        given-names: Ch
-        affiliation: "Dept. of CSE, Sir C R Reddy College of Engineering, Eluru, India"
-      - family-names: Dhumpati
-        given-names: Raghu
-        affiliation: "Dept. of CSE, Bahrain Polytechnic, Bahrain"
-    year: 2026
-    month: 6
-    collection-title: "2026 5th International Conference on Computer Networks, Big Data and IoT (ICCBI)"
-    conference:
-      name: ICCBI 2026
-      location: "Dubai, United Arab Emirates"
-    doi: "10.1109/ICCBI68589.2026.11619741"
-    url: "https://ieeexplore.ieee.org/document/11619741"
-    notes: "Published in IEEE Xplore: 27 July 2026"
+- type: unpublished
+  title: >
+    ContextGuard: A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent
+    Pipelines
+  authors:
+  - family-names: Gentyala
+    given-names: Sunil
+    affiliation: HCLTech (HCL America Inc.), Dallas, TX, USA
+    orcid: https://orcid.org/0009-0005-2642-3479
+  - family-names: Srinivas
+    given-names: Ch
+    affiliation: Dept. of CSE, Sir C R Reddy College of Engineering, Eluru, India
+  - family-names: Dhumpati
+    given-names: Raghu
+    affiliation: Dept. of CSE, Bahrain Polytechnic, Bahrain
+  year: 2026
+  notes: Manuscript submitted for publication; not yet peer-reviewed.
