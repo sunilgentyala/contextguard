@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/27215679/README.md)
 # ContextGuard
 
 **A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent Pipelines**
@@ -98,6 +97,8 @@ The one false negative (TP-006) is a privilege-escalation phrasing ("operating a
 ---
 
 ## Installation
+
+> **Naming note.** The project and repository are named ContextGuard, as cited in the IEEE paper. The npm package name is `contextguard-zt` because the unscoped name `contextguard` on npm belongs to an unrelated project. This repository is not affiliated with that package.
 
 ```bash
 npm install

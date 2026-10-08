@@ -1,5 +1,5 @@
 {
-  "name": "contextguard",
+  "name": "contextguard-zt",
   "version": "1.0.0",
   "description": "Zero-trust governance middleware for Model Context Protocol deployments — cryptographic attestation, capability binding, and semantic tool-definition scanning.",
   "main": "dist/index.js",
