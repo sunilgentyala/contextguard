@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "evaluate": "ts-node src/evaluate.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo": "ts-node src/demo.ts"
   },
   "keywords": [
     "mcp",

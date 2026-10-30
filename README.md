@@ -1,23 +1,61 @@
-# ContextGuard
+<div align="center">
 
-**A Zero-Trust Middleware Framework for Securing Model Context Protocol Agent Pipelines**
+# 🛡️ ContextGuard
+
+### Zero-trust middleware for Model Context Protocol (MCP) agent pipelines
+
+*Verify every tool, every call. Catch tool poisoning and rug pulls before your agent acts on them.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sunilgentyala/contextguard/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![IEEE Conference](https://img.shields.io/badge/Paper-IEEE_ICCBI_2026-red.svg)](https://ieeexplore.ieee.org/document/11619741)
-[![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-Published-green.svg)](https://ieeexplore.ieee.org/document/11619741)
+[![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-ICCBI_2026-green.svg)](https://ieeexplore.ieee.org/document/11619741)
 [![Stars](https://img.shields.io/github/stars/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/stargazers)
 [![Forks](https://img.shields.io/github/forks/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/network/members)
 
-ContextGuard is a proof-of-concept middleware library that enforces zero-trust security controls on Model Context Protocol (MCP) communications. It implements cryptographic server attestation, continuous capability binding (rug pull detection), and semantic tool definition scanning, addressing the supply chain attack surface introduced by MCP's unauthenticated tool enumeration model.
+<img src="docs/demo.gif" alt="ContextGuard demo: an unchanged tool is authorized, a mutated tool (rug pull) and a poisoned tool are blocked" width="760">
+
+</div>
 
 ---
 
-## Background
+## Why this exists
 
-The Model Context Protocol does not mandate authentication for the `tools/list` enumeration method. A large-scale empirical study of 1,899 open-source MCP server deployments found that 7.2% contained general exploitable vulnerabilities and 5.5% exhibited MCP-specific tool poisoning (Hasan et al., 2025). Over 1,800 internet-facing MCP servers accept unauthenticated tool listing requests. CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-6514 (CVSS 9.6) demonstrate operational exploitation of this exposure.
+MCP lets an agent discover tools by calling `tools/list`, and the protocol does not require that call to be authenticated. Whatever text a server returns becomes part of the model's context, so a malicious or compromised server can hide instructions in a tool description, or quietly change a tool after you approved it.
 
-ContextGuard was developed as the implementation artifact for foundational MCP security research:
+- A study of 1,899 open-source MCP servers found **7.2%** with general exploitable vulnerabilities and **5.5%** with MCP-specific tool poisoning (Hasan et al., 2025).
+- Over 1,800 internet-facing MCP servers accept unauthenticated tool listing.
+- CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-6514 (CVSS 9.6) show this exposure being exploited.
+
+ContextGuard sits between the MCP client and server and checks each invocation against what was originally authorized.
+
+## What it does
+
+| Threat | How ContextGuard responds |
+| --- | --- |
+| **Server impersonation** | ECDSA P-256 attestation with a fresh nonce per call |
+| **Rug pull** (tool changes after approval) | Signed capability binding; any mutation breaks the signature |
+| **Tool poisoning** (hidden instructions) | Pattern scan plus TF-IDF/LSH semantic fingerprint and drift detection |
+| **Supply chain tampering** | Provenance and dependency checks (simulated in this release) |
+
+Zero external ML dependencies. Only the Node.js built-in `crypto` module.
+
+## Quick start
+
+```bash
+git clone https://github.com/sunilgentyala/contextguard.git
+cd contextguard
+npm install
+npm run demo        # the run shown in the GIF above
+npm run evaluate    # full 40-entry corpus evaluation
+```
+
+Node.js 18+ required.
+
+> **Naming note.** The project and repository are named ContextGuard, as cited in the IEEE paper. The npm package name is `contextguard-zt` because the unscoped name `contextguard` on npm belongs to an unrelated project. This repository is not affiliated with that package.
+
+## Research background
+
+ContextGuard is the implementation artifact for published MCP security research:
 
 **Published paper (cite this):**
 > **A Zero-Trust Supply Chain Security Framework for Model Context Protocol-Based AI Systems**
@@ -33,7 +71,7 @@ ContextGuard was developed as the implementation artifact for foundational MCP s
 
 ## Architecture
 
-```
+```text
                     ContextGuard Zero-Trust Middleware
               +-------------------------------------------------+
               | SCVE: Supply Chain Validation Engine (background) |
@@ -93,19 +131,6 @@ False positive rate: **0%** (0/10 benign baseline tools misclassified).
 | P99 (cold-start dominated) | 10.8 ms |
 
 The one false negative (TP-006) is a privilege-escalation phrasing ("operating as a database admin with full elevated privileges") that evades the current regex patterns. Planned improvements are described in the paper.
-
----
-
-## Installation
-
-> **Naming note.** The project and repository are named ContextGuard, as cited in the IEEE paper. The npm package name is `contextguard-zt` because the unscoped name `contextguard` on npm belongs to an unrelated project. This repository is not affiliated with that package.
-
-```bash
-npm install
-npx ts-node src/evaluate.ts   # run full evaluation
-```
-
-Node.js 18+ required. No external ML dependencies; only Node.js built-in `crypto`.
 
 ---
 
