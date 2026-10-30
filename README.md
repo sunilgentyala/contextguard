@@ -75,7 +75,7 @@ ContextGuard is the implementation artifact for published MCP security research:
 <p align="center"><img src="docs/architecture.svg" alt="ContextGuard architecture: MCP client to CVL, DIMS, PEP to MCP server, with SCVE in the background" width="900"></p>
 
 
-Four security components:
+Four components plus an orchestrator:
 
 | Component | Module | Purpose | Status |
 | --- | --- | --- | --- |
