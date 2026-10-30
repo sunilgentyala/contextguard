@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ContextGuard: Zero-Trust Middleware for MCP</title>
+<meta name="description" content="Zero-trust middleware that attests MCP servers, binds tool definitions, and blocks rug pulls and tool poisoning before an agent acts.">
+<meta property="og:title" content="ContextGuard">
+<meta property="og:description" content="Zero-trust middleware for Model Context Protocol agent pipelines. IEEE ICCBI 2026.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%231f6feb%22/><path d=%22M9 16l5 5 9-10%22 stroke=%22white%22 stroke-width=%224%22 fill=%22none%22/></svg>">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--fg:#e6edf3;--dim:#8b949e;--blue:#58a6ff;--green:#3fb950;--amber:#d29922}
+@media(prefers-color-scheme:light){:root{--bg:#fff;--card:#f6f8fa;--line:#d0d7de;--fg:#1f2328;--dim:#59636e;--blue:#0969da;--green:#1a7f37;--amber:#9a6700}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:22px;align-items:center;height:56px;overflow-x:auto;white-space:nowrap}
+nav b{margin-right:auto}nav a{color:var(--dim);font-size:14px}
+.hero{text-align:center;padding:72px 20px 40px}
+.hero h1{font-size:clamp(38px,7vw,64px);margin:0;letter-spacing:-1.5px;background:linear-gradient(90deg,#58a6ff,#a371f7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{font-size:clamp(18px,2.6vw,22px);color:var(--dim);max-width:720px;margin:14px auto 28px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:10px 20px;border-radius:8px;border:1px solid var(--line);color:var(--fg);font-weight:600}
+.btn.p{background:#1f6feb;border-color:#1f6feb;color:#fff}.btn:hover{text-decoration:none;filter:brightness(1.15)}
+.demo{margin:44px auto 0;max-width:820px;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.demo img{display:block;width:100%;height:auto}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:30px;margin:0 0 8px;letter-spacing:-.5px}
+.lead{color:var(--dim);margin:0 0 28px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 6px;font-size:17px}.card p{margin:0;color:var(--dim);font-size:15px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid currentColor;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-bottom:28px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+.stat b{display:block;font-size:34px;letter-spacing:-1px}.stat span{color:var(--dim);font-size:13px}
+.arch{background:#0d1117;border:1px solid var(--line);border-radius:12px;padding:8px}.arch img{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:1px solid var(--line)}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--dim);font-size:13px;text-transform:uppercase;letter-spacing:.5px}tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-x:auto;font:14px/1.6 ui-monospace,Consolas,monospace;margin:0 0 16px}
+.note{color:var(--dim);font-size:14px;margin-top:14px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>ContextGuard</b><a href="#problem">Problem</a><a href="#architecture">Architecture</a><a href="#results">Results</a><a href="#start">Quick start</a><a href="#cite">Cite</a><a href="https://github.com/sunilgentyala/contextguard">GitHub</a></div></nav>
+
+<header class="hero">
+  <h1>ContextGuard</h1>
+  <p class="sub">Zero-trust middleware for Model Context Protocol agent pipelines. Verify every tool, every call, before your agent acts on it.</p>
+  <div class="btns">
+    <a class="btn p" href="https://github.com/sunilgentyala/contextguard">View on GitHub</a>
+    <a class="btn" href="https://ieeexplore.ieee.org/document/11619741">Read the IEEE paper</a>
+  </div>
+  <div class="demo"><img src="demo.gif" alt="Terminal demo: an unchanged tool is authorized, a mutated tool and a poisoned tool are blocked" width="1080" height="500"></div>
+</header>
+
+<section id="problem"><div class="wrap">
+  <h2>The problem</h2>
+  <p class="lead">MCP does not require <code>tools/list</code> to be authenticated, and whatever a server returns lands in the model's context. A malicious or compromised server can hide instructions in a description, or change a tool after you approved it.</p>
+  <div class="stats">
+    <div class="stat"><b>7.2%</b><span>of 1,899 open-source MCP servers had exploitable vulnerabilities</span></div>
+    <div class="stat"><b>5.5%</b><span>showed MCP-specific tool poisoning</span></div>
+    <div class="stat"><b>1,800+</b><span>internet-facing servers accept unauthenticated listing</span></div>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag" style="color:var(--green)">CVL</span><h3>Rug pulls</h3><p>Tool definitions are signed at approval time. Any later mutation breaks the binding and the call is blocked.</p></div>
+    <div class="card"><span class="tag" style="color:var(--blue)">DIMS</span><h3>Tool poisoning</h3><p>Pattern scan plus a TF-IDF and LSH fingerprint catch hidden instructions and semantic drift.</p></div>
+    <div class="card"><span class="tag" style="color:var(--green)">CVL</span><h3>Impersonation</h3><p>ECDSA P-256 attestation with a fresh nonce on every invocation.</p></div>
+    <div class="card"><span class="tag" style="color:var(--amber)">SCVE</span><h3>Supply chain</h3><p>Provenance and dependency checks. Simulated in this release, planned for full instrumentation.</p></div>
+  </div>
+</div></section>
+
+<section id="architecture"><div class="wrap">
+  <h2>Architecture</h2>
+  <p class="lead">Each call passes CVL, then DIMS, then PEP. A failure at any stage blocks it. SCVE runs in the background.</p>
+  <div class="arch"><img src="architecture.svg" alt="ContextGuard architecture diagram" width="1000" height="470"></div>
+  <p class="note">Solid borders are implemented in <code>src/</code>. Dashed borders are planned or simulated in this release.</p>
+</div></section>
+
+<section id="results"><div class="wrap">
+  <h2>Results</h2>
+  <p class="lead">Hand-crafted 40-entry corpus: 15 tool poisoning, 8 rug pull, 7 supply chain, 10 benign baselines.</p>
+  <div class="stats">
+    <div class="stat"><b>96.7%</b><span>overall recall (29 of 30)</span></div>
+    <div class="stat"><b>100%</b><span>precision</span></div>
+    <div class="stat"><b>0%</b><span>false positives (0 of 10)</span></div>
+    <div class="stat"><b>0.75 ms</b><span>median latency per invocation</span></div>
+  </div>
+  <table>
+    <tr><th>Category</th><th>TP</th><th>FN</th><th>Recall</th></tr>
+    <tr><td>Tool poisoning</td><td>14</td><td>1</td><td>93.3%</td></tr>
+    <tr><td>Rug pull</td><td>8</td><td>0</td><td>100%</td></tr>
+    <tr><td>Supply chain*</td><td>7</td><td>0</td><td>100%</td></tr>
+  </table>
+  <p class="note">*Supply chain detection simulates SCVE checks pending full instrumentation. The one miss (TP-006) is a privilege-escalation phrasing that evades the current regex patterns. Latency measured over 1,000 invocations on an Intel Core i7-1185G7, Node.js 20.</p>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <h2>Quick start</h2>
+<pre>git clone https://github.com/sunilgentyala/contextguard.git
+cd contextguard
+npm install
+npm run demo        # the run in the GIF above
+npm run evaluate    # full corpus evaluation</pre>
+<pre>import { establishSession, verifyToolInvocation } from './src/index';
+
+const session = establishSession('my-server', serverToolDefinitions);
+const result = verifyToolInvocation(session, 'tool_name', currentTools);
+
+if (!result.authorized) console.error('BLOCKED:', result.reason);</pre>
+  <p class="note">Node.js 18+. No external ML dependencies, only the built-in <code>crypto</code> module.</p>
+</div></section>
+
+<section id="cite"><div class="wrap">
+  <h2>Cite</h2>
+  <p class="lead">Gentyala, S., Srinivas, Ch., Dhumpati, R. <em>A Zero-Trust Supply Chain Security Framework for Model Context Protocol-Based AI Systems.</em> 2026 5th International Conference on Computer Networks, Big Data and IoT (ICCBI), Dubai, pp. 913-919. DOI: <a href="https://doi.org/10.1109/ICCBI68589.2026.11619741">10.1109/ICCBI68589.2026.11619741</a></p>
+  <p class="note">Authors: Sunil Gentyala (HCLTech, IEEE Senior Member), Ch Srinivas (Sir C R Reddy College of Engineering), Raghu Dhumpati (Bahrain Polytechnic). MIT licensed code; corpus terms in NOTICE.md.</p>
+</div></section>
+
+<footer><div class="wrap">ContextGuard · <a href="https://github.com/sunilgentyala/contextguard">GitHub</a> · <a href="https://ieeexplore.ieee.org/document/11619741">IEEE Xplore</a> · <a href="https://orcid.org/0009-0005-2642-3479">ORCID</a></div></footer>
+</body>
+</html>

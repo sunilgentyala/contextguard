@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ ContextGuard
+# ContextGuard
 
 ### Zero-trust middleware for Model Context Protocol (MCP) agent pipelines
 
@@ -9,6 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sunilgentyala/contextguard/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-ICCBI_2026-green.svg)](https://ieeexplore.ieee.org/document/11619741)
+[![Website](https://img.shields.io/badge/Website-sunilgentyala.github.io-1f6feb.svg)](https://sunilgentyala.github.io/contextguard/)
 [![Stars](https://img.shields.io/github/stars/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/stargazers)
 [![Forks](https://img.shields.io/github/forks/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/network/members)
 
@@ -71,17 +72,8 @@ ContextGuard is the implementation artifact for published MCP security research:
 
 ## Architecture
 
-```text
-                    ContextGuard Zero-Trust Middleware
-              +-------------------------------------------------+
-              | SCVE: Supply Chain Validation Engine (background) |
-              |   Registry Verification | Dependency Scan | NL-SCA |
-              +-------------------------------------------------+
-MCP Client -->| CVL --> DIMS --> PEP |--> MCP Server
-              | Attestation   Drift/Scan   Per-Invocation  |
-              | + Binding     + Pattern    AuthZ           |
-              +-------------------------------------------------+
-```
+<p align="center"><img src="docs/architecture.svg" alt="ContextGuard architecture: MCP client to CVL, DIMS, PEP to MCP server, with SCVE in the background" width="900"></p>
+
 
 Four security components:
 

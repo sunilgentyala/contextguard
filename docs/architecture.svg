@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t">ContextGuard architecture</title>
+  <desc id="d">An MCP client sends requests through the ContextGuard middleware, which runs CVL, DIMS and PEP in sequence before reaching the MCP server. SCVE runs in the background above the pipeline.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#58a6ff"/></marker>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#1f6feb"/><stop offset="1" stop-color="#8957e5"/></linearGradient>
+  </defs>
+  <rect width="1000" height="470" rx="14" fill="#0d1117"/>
+  <!-- middleware container -->
+  <rect x="190" y="70" width="620" height="350" rx="14" fill="#111826" stroke="url(#g)" stroke-width="2"/>
+  <text x="500" y="52" text-anchor="middle" fill="#c9d1d9" font-size="17" font-weight="700" letter-spacing="1">CONTEXTGUARD ZERO-TRUST MIDDLEWARE</text>
+  <!-- SCVE -->
+  <rect x="215" y="90" width="570" height="86" rx="10" fill="#161b22" stroke="#d29922" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="235" y="116" fill="#d29922" font-size="15" font-weight="700">SCVE  Supply Chain Validation Engine</text>
+  <text x="765" y="116" text-anchor="end" fill="#8b949e" font-size="12">background, simulated in v1.0</text>
+  <g font-size="13" fill="#c9d1d9" text-anchor="middle">
+    <rect x="235" y="128" width="165" height="32" rx="6" fill="#21262d"/><text x="317" y="149">Registry verification</text>
+    <rect x="417" y="128" width="165" height="32" rx="6" fill="#21262d"/><text x="500" y="149">Dependency scan</text>
+    <rect x="599" y="128" width="165" height="32" rx="6" fill="#21262d"/><text x="681" y="149">NL-SCA on descriptions</text>
+  </g>
+  <path d="M500 176V216" stroke="#d29922" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a)" fill="none"/>
+  <!-- client / server -->
+  <g>
+    <rect x="20" y="215" width="130" height="130" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="85" y="272" text-anchor="middle" fill="#c9d1d9" font-size="17" font-weight="700">MCP</text>
+    <text x="85" y="294" text-anchor="middle" fill="#c9d1d9" font-size="17" font-weight="700">Client</text>
+    <text x="85" y="320" text-anchor="middle" fill="#8b949e" font-size="12">agent / LLM host</text>
+    <rect x="850" y="215" width="130" height="130" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="915" y="272" text-anchor="middle" fill="#c9d1d9" font-size="17" font-weight="700">MCP</text>
+    <text x="915" y="294" text-anchor="middle" fill="#c9d1d9" font-size="17" font-weight="700">Server</text>
+    <text x="915" y="320" text-anchor="middle" fill="#8b949e" font-size="12">untrusted tools</text>
+  </g>
+  <!-- stages -->
+  <g text-anchor="middle">
+    <rect x="215" y="215" width="170" height="130" rx="10" fill="#0f2a1a" stroke="#3fb950" stroke-width="2"/>
+    <text x="300" y="245" fill="#3fb950" font-size="20" font-weight="800">CVL</text>
+    <text x="300" y="266" fill="#c9d1d9" font-size="13">Attestation + Binding</text>
+    <text x="300" y="296" fill="#8b949e" font-size="12">ECDSA P-256 attestation</text>
+    <text x="300" y="314" fill="#8b949e" font-size="12">+ signed capability binding</text>
+    <text x="300" y="334" fill="#3fb950" font-size="11">implemented</text>
+
+    <rect x="415" y="215" width="170" height="130" rx="10" fill="#0c2236" stroke="#58a6ff" stroke-width="2"/>
+    <text x="500" y="245" fill="#58a6ff" font-size="20" font-weight="800">DIMS</text>
+    <text x="500" y="266" fill="#c9d1d9" font-size="13">Drift + Pattern Scan</text>
+    <text x="500" y="296" fill="#8b949e" font-size="12">TF-IDF + LSH drift check</text>
+    <text x="500" y="314" fill="#8b949e" font-size="12">+ poisoning patterns</text>
+    <text x="500" y="334" fill="#58a6ff" font-size="11">implemented</text>
+
+    <rect x="615" y="215" width="170" height="130" rx="10" fill="#1d1630" stroke="#a371f7" stroke-width="2" stroke-dasharray="7 4"/>
+    <text x="700" y="245" fill="#a371f7" font-size="20" font-weight="800">PEP</text>
+    <text x="700" y="266" fill="#c9d1d9" font-size="13">Per-invocation AuthZ</text>
+    <text x="700" y="296" fill="#8b949e" font-size="12">checks principal,</text>
+    <text x="700" y="314" fill="#8b949e" font-size="12">scope, data class</text>
+    <text x="700" y="334" fill="#a371f7" font-size="11">planned, simulated</text>
+  </g>
+  <!-- flow arrows -->
+  <g stroke="#58a6ff" stroke-width="2.5" fill="none" marker-end="url(#a)">
+    <path d="M150 280H213"/><path d="M385 280H413"/><path d="M585 280H613"/><path d="M785 280H848"/>
+  </g>
+  <!-- block path -->
+  <path d="M500 345V385" stroke="#f85149" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#a)" fill="none"/>
+  <rect x="380" y="387" width="240" height="26" rx="13" fill="#2d1214" stroke="#f85149"/>
+  <text x="500" y="405" text-anchor="middle" fill="#f85149" font-size="13" font-weight="700">any failed check: call BLOCKED</text>
+  <!-- legend -->
+  <text x="20" y="455" fill="#8b949e" font-size="12">Solid border: implemented in src/.  Dashed border: planned or simulated in this release.</text>
+</svg>
