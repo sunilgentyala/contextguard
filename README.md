@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sunilgentyala/contextguard/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-ICCBI_2026-green.svg)](https://ieeexplore.ieee.org/document/11619741)
-[![Website](https://img.shields.io/badge/Website-sunilgentyala.github.io-1f6feb.svg)](https://sunilgentyala.github.io/contextguard/)
+[![Website](https://img.shields.io/badge/Website-sunilgentyala.com-1f6feb.svg)](https://sunilgentyala.com/contextguard/)
 [![Stars](https://img.shields.io/github/stars/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/stargazers)
 [![Forks](https://img.shields.io/github/forks/sunilgentyala/contextguard?style=social)](https://github.com/sunilgentyala/contextguard/network/members)
 
