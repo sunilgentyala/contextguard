@@ -66,9 +66,9 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-siz
   <h2>The problem</h2>
   <p class="lead">MCP does not require <code>tools/list</code> to be authenticated, and whatever a server returns lands in the model's context. A malicious or compromised server can hide instructions in a description, or change a tool after you approved it.</p>
   <div class="stats">
-    <div class="stat"><b>7.2%</b><span>of 1,899 open-source MCP servers had exploitable vulnerabilities</span></div>
+    <div class="stat"><b>7.2%</b><span>of 1,899 open-source MCP servers contained general vulnerabilities</span></div>
     <div class="stat"><b>5.5%</b><span>showed MCP-specific tool poisoning</span></div>
-    <div class="stat"><b>1,800+</b><span>internet-facing servers accept unauthenticated listing</span></div>
+    <div class="stat"><b>119 of 119</b><span>sampled internet-exposed servers (of 1,862 found) listed tools without authentication</span></div>
   </div>
   <div class="grid">
     <div class="card"><span class="tag" style="color:var(--green)">CVL</span><h3>Rug pulls</h3><p>Tool definitions are signed at approval time. Any later mutation breaks the binding and the call is blocked.</p></div>

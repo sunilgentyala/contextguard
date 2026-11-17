@@ -23,9 +23,9 @@
 
 MCP lets an agent discover tools by calling `tools/list`, and the protocol does not require that call to be authenticated. Whatever text a server returns becomes part of the model's context, so a malicious or compromised server can hide instructions in a tool description, or quietly change a tool after you approved it.
 
-- A study of 1,899 open-source MCP servers found **7.2%** with general exploitable vulnerabilities and **5.5%** with MCP-specific tool poisoning (Hasan et al., 2025).
-- Over 1,800 internet-facing MCP servers accept unauthenticated tool listing.
-- CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-6514 (CVSS 9.6) show this exposure being exploited.
+- A study of 1,899 open-source MCP servers found **7.2%** with general vulnerabilities and **5.5%** with MCP-specific tool poisoning (Hasan et al., 2025, arXiv:2506.13538).
+- Knostic's scan (17 July 2025) found 1,862 MCP servers exposed to the internet. In a manually verified sample of 119, all 119 returned tool listings without authentication ([Knostic](https://knostic.ai/blog/mapping-mcp-servers-study)).
+- CVE-2025-6514 (`mcp-remote`, CVSS 9.6 per the JFrog CNA) is command injection through a malicious server's `authorization_endpoint`, fixed in 0.1.16. CVE-2025-32711 (EchoLeak, CVSS 9.3 per Microsoft) is an AI command injection flaw in Microsoft 365 Copilot. It is cited as a related case and is not an MCP bug.
 
 ContextGuard sits between the MCP client and server and checks each invocation against what was originally authorized.
 
@@ -211,6 +211,7 @@ GitHub's "Cite this repository" button uses [`CITATION.cff`](CITATION.cff), whic
 ## References
 
 - Hasan, M. M., Li, H., Fallahzadeh, E., Rajbahadur, G. K., Adams, B., & Hassan, A. E. (2025). Model Context Protocol (MCP) at first glance: Studying the security and maintainability of MCP servers. *arXiv:2506.13538*. doi: 10.48550/arxiv.2506.13538
+- Goldberg, I. (2025, July 17). Mapping MCP servers study. Knostic. https://knostic.ai/blog/mapping-mcp-servers-study
 - Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., & Fritz, M. (2023). Not what you've signed up for: Compromising real-world LLM-integrated applications with indirect prompt injection. *Proc. ACM AISec Workshop*, pp. 79-90. doi: 10.1145/3605764.3623985
 - Bhatt, M., Narajala, V. S., & Habler, I. (2025). ETDI: Mitigating tool squatting and rug pull attacks in MCP. *arXiv:2506.01333*. doi: 10.48550/arxiv.2506.01333
 - NIST SP 800-207: Zero Trust Architecture (2020). doi: 10.6028/NIST.SP.800-207
