@@ -89,7 +89,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-siz
   <h2>Results</h2>
   <p class="lead">Hand-crafted 40-entry corpus: 15 tool poisoning, 8 rug pull, 7 supply chain, 10 benign baselines.</p>
   <div class="stats">
-    <div class="stat"><b>96.7%</b><span>overall recall (29 of 30)</span></div>
+    <div class="stat"><b>95.7%</b><span>measured recall (22 of 23, 95% CI 78.1% to 99.9%)</span></div>
     <div class="stat"><b>100%</b><span>precision</span></div>
     <div class="stat"><b>0%</b><span>false positives (0 of 10)</span></div>
     <div class="stat"><b>0.75 ms</b><span>median latency per invocation</span></div>
@@ -98,9 +98,9 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-siz
     <tr><th>Category</th><th>TP</th><th>FN</th><th>Recall</th></tr>
     <tr><td>Tool poisoning</td><td>14</td><td>1</td><td>93.3%</td></tr>
     <tr><td>Rug pull</td><td>8</td><td>0</td><td>100%</td></tr>
-    <tr><td>Supply chain*</td><td>7</td><td>0</td><td>100%</td></tr>
+    <tr><td>Supply chain* (simulated)</td><td>7</td><td>0</td><td>not measured</td></tr>
   </table>
-  <p class="note">*Supply chain detection simulates SCVE checks pending full instrumentation. The one miss (TP-006) is a privilege-escalation phrasing that evades the current regex patterns. Latency measured over 1,000 invocations on an Intel Core i7-1185G7, Node.js 20.</p>
+  <p class="note">*Supply chain results are simulated: the SCVE result for these 7 entries is hardcoded in the evaluation script, so they are excluded from the headline recall (29 of 30 including them). The corpus is small and author-written, so treat results as a regression baseline. The one miss (TP-006) is a privilege-escalation phrasing that evades the current regex patterns. Latency measured over 1,000 invocations on an Intel Core i7-1185G7, Node.js 20.</p>
 </div></section>
 
 <section id="start"><div class="wrap">

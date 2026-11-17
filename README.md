@@ -111,16 +111,26 @@ Evaluated against a 30-entry hand-crafted corpus (15 tool poisoning, 8 rug pull,
 
 False positive rate: **0%** (0/10 benign baseline tools misclassified).
 
-*Supply chain detection simulates SCVE sandbox/provenance checks pending full instrumentation.
+*Supply chain detection simulates SCVE sandbox/provenance checks pending full instrumentation. In `src/evaluate.ts` the SCVE result for these 7 entries is set to `true`, so they are **not measured detections**. Excluding them, the measured result is **22/23 recall (95.7%)**, and the 7 supply-chain rows should be read as a placeholder, not evidence.
 
-**Latency (1,000 invocations, n=5 tool set, Intel Core i7-1185G7, Node.js 20 LTS):**
+**Sample size and uncertainty.** The corpus is small and hand-written by the author, so it is not independent of the detectors it tests. Exact (Clopper-Pearson) 95% confidence intervals:
 
-| Metric | Value |
-| --- | --- |
-| Mean | 1.005 ms |
-| Median (P50) | 0.747 ms |
-| P95 | 0.991 ms |
-| P99 (cold-start dominated) | 10.8 ms |
+| Result | Point estimate | 95% CI |
+| --- | --- | --- |
+| Recall, all 30 entries (29/30, includes simulated rows) | 96.7% | 82.8% to 99.9% |
+| Recall, measured entries only (22/23) | 95.7% | 78.1% to 99.9% |
+| False positive rate (0/10) | 0% | 0% to 30.8% |
+
+Treat these as a regression baseline on a small corpus, not as a general detection rate. The one false negative (TP-006) is described below.
+
+**Latency (1,000 invocations, n=5 tool set, Node.js, single process, in-memory, no network):**
+
+| Run | Hardware / runtime | Mean | P50 | P95 | P99 |
+| --- | --- | --- | --- | --- | --- |
+| Paper | Intel Core i7-1185G7, Node.js 20 LTS | 1.005 ms | 0.747 ms | 0.991 ms | 10.8 ms |
+| Re-run 2026-11-16 | Windows 11, Node.js 24.16 | 0.692 ms | 0.639 ms | 0.909 ms | 1.120 ms |
+
+Latency varies by machine and runtime, and the paper's P99 was dominated by cold start. Reproduce with `npm run evaluate`.
 
 The one false negative (TP-006) is a privilege-escalation phrasing ("operating as a database admin with full elevated privileges") that evades the current regex patterns. Planned improvements are described in the paper.
 
